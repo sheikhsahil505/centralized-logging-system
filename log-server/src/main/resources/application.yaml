@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: log-server
+server:
+  port: 8082
