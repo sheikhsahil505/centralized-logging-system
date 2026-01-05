@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "54388623-b856-49ab-85eb-4776bd5eb0ea",
+		"name": "centralized-logging-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24693838",
+		"_collection_link": "https://restless-rocket-356871.postman.co/workspace/MyCollection~059f9c67-ba4c-4f6a-a2c3-f5a31b4563ac/collection/24693838-54388623-b856-49ab-85eb-4776bd5eb0ea?action=share&source=collection_link&creator=24693838"
+	},
+	"item": [
+		{
+			"name": "All logs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"Zenith Tech Tablet\",\n    \"description\": \"Powerful tablet for seamless productivity.\",\n    \"price\": 299.99,\n    \"category\":[ \"Electronics\",\"mobile\"]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/metrics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/metrics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logs filter by username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/logs?username=admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blacklisted logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/logs?isBlacklisted=false",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "isBlacklisted",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Linux system login logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/logs?service=linux_login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "service",
+							"value": "linux_login"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Level logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/logs?level=info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "info"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Linux login with level",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/logs?service=linux_login&level=info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "service",
+							"value": "linux_login"
+						},
+						{
+							"key": "level",
+							"value": "info"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logs with limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/logs?limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logs sort by timestamp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/logs?sort=timestamp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "timestamp"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
